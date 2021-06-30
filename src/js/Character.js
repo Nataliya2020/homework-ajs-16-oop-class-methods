@@ -1,3 +1,4 @@
+const allowedType = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
 export default class Character {
   constructor(name, type) {
     if (!name || !type) {
@@ -10,18 +11,9 @@ export default class Character {
       throw new Error('Данные некорректны');
     }
 
-    const allowedType = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
-    let count = 0;
-
-    allowedType.forEach((item) => {
-      if (type === item && typeof type === 'string') {
-        this.type = type;
-      } else {
-        count += 1;
-      }
-    });
-
-    if (count === allowedType.length) {
+    if (allowedType.includes(type)) {
+      this.type = type;
+    } else {
       throw new Error('Данные некорректны');
     }
 

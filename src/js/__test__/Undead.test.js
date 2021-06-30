@@ -1,7 +1,7 @@
 import Undead from '../Undead';
 
 test('checking the correctness of the object creation', () => {
-  expect(new Undead('Genry', 'Undead')).toEqual({
+  expect(new Undead('Genry')).toEqual({
     name: 'Genry',
     type: 'Undead',
     health: 100,
